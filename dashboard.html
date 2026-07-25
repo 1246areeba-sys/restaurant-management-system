@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="dashboard">
+    <div class="app-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-icon"><i class="fas fa-utensils"></i></div>
+                <span class="brand-text restaurant-name">Gourmet Restaurant</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">Main</div>
+                <a href="dashboard.html" class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-th-large"></i>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <div class="nav-section">Management</div>
+                <a href="customers.html" class="nav-item" data-page="customers">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-label">Customers</span>
+                </a>
+                <a href="staff.html" class="nav-item" data-page="staff">
+                    <i class="fas fa-user-tie"></i>
+                    <span class="nav-label">Staff</span>
+                </a>
+                <a href="categories.html" class="nav-item" data-page="categories">
+                    <i class="fas fa-tags"></i>
+                    <span class="nav-label">Categories</span>
+                </a>
+                <a href="menu.html" class="nav-item" data-page="menu">
+                    <i class="fas fa-hamburger"></i>
+                    <span class="nav-label">Menu</span>
+                </a>
+                <a href="tables.html" class="nav-item" data-page="tables">
+                    <i class="fas fa-chair"></i>
+                    <span class="nav-label">Tables</span>
+                </a>
+
+                <div class="nav-section">Operations</div>
+                <a href="orders.html" class="nav-item" data-page="orders">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span class="nav-label">Orders</span>
+                </a>
+                <a href="billing.html" class="nav-item" data-page="billing">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span class="nav-label">Billing</span>
+                </a>
+                <a href="payments.html" class="nav-item" data-page="payments">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="nav-label">Payments</span>
+                </a>
+                <a href="reservations.html" class="nav-item" data-page="reservations">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="nav-label">Reservations</span>
+                </a>
+
+                <div class="nav-section">Inventory</div>
+                <a href="inventory.html" class="nav-item" data-page="inventory">
+                    <i class="fas fa-boxes"></i>
+                    <span class="nav-label">Inventory</span>
+                </a>
+                <a href="suppliers.html" class="nav-item" data-page="suppliers">
+                    <i class="fas fa-truck"></i>
+                    <span class="nav-label">Suppliers</span>
+                </a>
+
+                <div class="nav-section">Reports</div>
+                <a href="reports.html" class="nav-item" data-page="reports">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="nav-label">Reports</span>
+                </a>
+
+                <div class="nav-section">Settings</div>
+                <a href="settings.html" class="nav-item" data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-label">Settings</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-page="profile">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-label">Profile</span>
+                </a>
+
+                <div class="nav-section">Info</div>
+                <a href="about.html" class="nav-item" data-page="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="nav-label">About</span>
+                </a>
+                <a href="contact.html" class="nav-item" data-page="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span class="nav-label">Contact</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-info">
+                    <div class="user-avatar user-initials">AD</div>
+                    <div class="user-details">
+                        <div class="user-name user-name-display">Admin User</div>
+                        <div class="user-role user-role-display">Manager</div>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle" onclick="RMS.UI.toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button class="sidebar-toggle d-md-none" id="mobileSidebarToggle" onclick="RMS.UI.toggleMobileSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <i class="fas fa-home"></i> / <span id="breadcrumb">Dashboard</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search anything..." id="globalSearch">
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="themeToggle">
+                            <i class="fas fa-moon" id="themeToggleIcon"></i>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="notificationToggle">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-dot"></span>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-notifications" id="notificationMenu">
+                            <div class="dropdown-header">Notifications</div>
+                            <div class="notification-item unread">
+                                <div class="notif-icon bg-primary-light" style="color:var(--primary)"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">New Order #ORD005</div>
+                                    <div class="notif-text">A new order has been placed</div>
+                                    <div class="notif-time">2 min ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notif-icon bg-success-light" style="color:var(--success)"><i class="fas fa-check-circle"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">Payment Received</div>
+                                    <div class="notif-text">Payment of $52.77 received</div>
+                                    <div class="notif-time">1 hour ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notif-icon bg-warning-light" style="color:var(--warning)"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">Low Stock Alert</div>
+                                    <div class="notif-text">Tomato Sauce running low</div>
+                                    <div class="notif-time">3 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="userDropdown">
+                            <div class="user-avatar-sm user-initials" style="width:36px;height:36px;border-radius:50%;background:var(--primary-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;">AD</div>
+                        </div>
+                        <div class="dropdown-menu" id="userDropdownMenu">
+                            <div class="dropdown-header">User Menu</div>
+                            <a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
+                            <a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p class="page-subtitle">Welcome back! Here's what's happening today.</p>
+                    </div>
+                    <div class="page-actions">
+                        <button class="btn btn-primary" onclick="window.location.href='orders.html'">
+                            <i class="fas fa-plus"></i> New Order
+                        </button>
+                        <button class="btn btn-outline" onclick="window.location.href='reports.html'">
+                            <i class="fas fa-download"></i> Download Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stat Cards -->
+                <div class="grid-4" id="statCards">
+                    <div class="stat-card stat-primary">
+                        <div class="stat-icon red"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-label">Total Revenue</div>
+                            <div class="stat-value" id="totalRevenue">$0</div>
+                            <div class="stat-change positive"><i class="fas fa-arrow-up"></i> 12.5%</div>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-info">
+                        <div class="stat-icon blue"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-label">Total Orders</div>
+                            <div class="stat-value" id="totalOrders">0</div>
+                            <div class="stat-change positive"><i class="fas fa-arrow-up"></i> 8.2%</div>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-success">
+                        <div class="stat-icon green"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-label">Total Customers</div>
+                            <div class="stat-value" id="totalCustomers">0</div>
+                            <div class="stat-change positive"><i class="fas fa-arrow-up"></i> 5.3%</div>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-warning">
+                        <div class="stat-icon orange"><i class="fas fa-chair"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-label">Available Tables</div>
+                            <div class="stat-value" id="availableTables">0</div>
+                            <div class="stat-change negative"><i class="fas fa-arrow-down"></i> 2.1%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="grid-2" style="margin-top:24px;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-line" style="color:var(--primary)"></i> Sales Analytics</h3>
+                            <select id="salesPeriod" onchange="Dashboard.loadSalesChart()" style="padding:6px 12px;border:1px solid var(--light-gray);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text-primary);">
+                                <option value="weekly">This Week</option>
+                                <option value="monthly" selected>This Month</option>
+                                <option value="yearly">This Year</option>
+                            </select>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-pie" style="color:var(--primary)"></i> Order Status</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="orderStatusChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions & Recent Activity -->
+                <div class="grid-2" style="margin-top:24px;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-bolt" style="color:var(--warning)"></i> Quick Actions</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="window.location.href='orders.html'">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>New Order</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="window.location.href='customers.html'">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>Add Customer</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="window.location.href='menu.html'">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Add Menu Item</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="window.location.href='reservations.html'">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    <span>New Reservation</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="window.location.href='billing.html'">
+                                    <i class="fas fa-file-invoice"></i>
+                                    <span>Generate Bill</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="window.location.href='inventory.html'">
+                                    <i class="fas fa-box"></i>
+                                    <span>Check Stock</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-clock" style="color:var(--info)"></i> Recent Activity</h3>
+                            <button class="btn btn-sm btn-outline" onclick="Dashboard.loadActivities()"><i class="fas fa-sync"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list" id="activityList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="card" style="margin-top:24px;">
+                    <div class="card-header">
+                        <h3><i class="fas fa-clipboard-list" style="color:var(--primary)"></i> Recent Orders</h3>
+                        <a href="orders.html" class="btn btn-sm btn-outline">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Table</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Payment</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentOrdersTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // ===== DASHBOARD MODULE =====
+        const Dashboard = {
+            salesChart: null,
+            orderChart: null,
+
+            init() {
+                this.loadStats();
+                this.loadSalesChart();
+                this.loadOrderStatusChart();
+                this.loadRecentOrders();
+                this.loadActivities();
+            },
+
+            loadStats() {
+                const orders = RMS.Data.getAll('orders');
+                const customers = RMS.Data.getAll('customers');
+                const tables = RMS.Data.getAll('tables');
+                const payments = RMS.Data.getAll('payments');
+
+                const totalRevenue = RMS.Data.sum('payments', 'amount', p => p.status === 'completed');
+                document.getElementById('totalRevenue').textContent = RMS.Utils.formatCurrency(totalRevenue);
+                document.getElementById('totalOrders').textContent = orders.length;
+                document.getElementById('totalCustomers').textContent = customers.length;
+                document.getElementById('availableTables').textContent = tables.filter(t => t.status === 'available').length;
+            },
+
+            loadSalesChart() {
+                const ctx = document.getElementById('salesChart').getContext('2d');
+                const period = document.getElementById('salesPeriod').value;
+
+                let labels, data;
+                if (period === 'weekly') {
+                    labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                    data = [420, 580, 490, 750, 890, 1200, 950];
+                } else if (period === 'monthly') {
+                    labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+                    data = [4200, 5800, 4900, 6200];
+                } else {
+                    labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                    data = [12000, 15000, 11000, 18000, 22000, 19000, 25000, 21000, 23000, 28000, 26000, 30000];
+                }
+
+                if (this.salesChart) this.salesChart.destroy();
+
+                this.salesChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels,
+                        datasets: [{
+                            label: 'Revenue ($)',
+                            data,
+                            borderColor: '#e74c3c',
+                            backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#e74c3c',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2,
+                            pointRadius: 5
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                            x: { grid: { display: false } }
+                        }
+                    }
+                });
+            },
+
+            loadOrderStatusChart() {
+                const ctx = document.getElementById('orderStatusChart').getContext('2d');
+                const orders = RMS.Data.getAll('orders');
+                const pending = orders.filter(o => o.status === 'pending').length;
+                const preparing = orders.filter(o => o.status === 'preparing').length;
+                const served = orders.filter(o => o.status === 'served').length;
+                const completed = orders.filter(o => o.status === 'completed').length;
+                const cancelled = orders.filter(o => o.status === 'cancelled').length;
+
+                if (this.orderChart) this.orderChart.destroy();
+
+                this.orderChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Pending', 'Preparing', 'Served', 'Completed', 'Cancelled'],
+                        datasets: [{
+                            data: [pending || 1, preparing || 1, served || 1, completed || 1, cancelled || 0],
+                            backgroundColor: ['#f39c12', '#3498db', '#1abc9c', '#27ae60', '#e74c3c'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { padding: 16, usePointStyle: true, font: { size: 12 } }
+                            }
+                        },
+                        cutout: '65%'
+                    }
+                });
+            },
+
+            loadRecentOrders() {
+                const orders = RMS.Data.getAll('orders');
+                const recent = orders.slice(-5).reverse();
+                const tbody = document.getElementById('recentOrdersTable');
+
+                if (!recent.length) {
+                    tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><i class="fas fa-inbox"></i><h3>No Orders Yet</h3></div></td></tr>`;
+                    return;
+                }
+
+                tbody.innerHTML = recent.map(o => `
+                    <tr>
+                        <td><strong>${o.id}</strong></td>
+                        <td>${RMS.Utils.getCustomerName(o.customer)}</td>
+                        <td>${RMS.Utils.getTableNumber(o.table)}</td>
+                        <td>${o.items.length} items</td>
+                        <td><strong>${RMS.Utils.formatCurrency(o.total)}</strong></td>
+                        <td>${RMS.Utils.getStatusBadge(o.status)}</td>
+                        <td>${RMS.Utils.getStatusBadge(o.paymentStatus)}</td>
+                        <td>${RMS.Utils.formatDateTime(o.createdAt)}</td>
+                    </tr>
+                `).join('');
+            },
+
+            loadActivities() {
+                const activities = RMS.Data.getAll('activities');
+                const list = document.getElementById('activityList');
+
+                if (!activities.length) {
+                    list.innerHTML = '<div class="empty-state"><i class="fas fa-clock"></i><h3>No Activity</h3></div>';
+                    return;
+                }
+
+                const icons = { order: 'fa-shopping-cart', payment: 'fa-credit-card', reservation: 'fa-calendar-check', staff: 'fa-user-tie', inventory: 'fa-boxes' };
+                const colors = { order: 'var(--primary)', payment: 'var(--success)', reservation: 'var(--warning)', staff: 'var(--info)', inventory: 'var(--danger)' };
+
+                list.innerHTML = activities.slice(-5).reverse().map(a => `
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background:${colors[a.type] || '#eee'}22;color:${colors[a.type] || '#999'}">
+                            <i class="fas ${icons[a.type] || 'fa-clock'}"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-text">${a.text}</div>
+                            <div class="activity-time">${a.time}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        };
+
+        // Override initDashboard
+        RMS.Page.initDashboard = function () {
+            Dashboard.init();
+        };
+    </script>
+</body>
+</html>

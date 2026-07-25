@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant - Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="menu">
+    <div class="app-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand"><div class="logo-icon"><i class="fas fa-utensils"></i></div><span class="brand-text restaurant-name">Gourmet Restaurant</span></div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">Main</div><a href="dashboard.html" class="nav-item" data-page="dashboard"><i class="fas fa-th-large"></i><span class="nav-label">Dashboard</span></a>
+                <div class="nav-section">Management</div>
+                <a href="customers.html" class="nav-item" data-page="customers"><i class="fas fa-users"></i><span class="nav-label">Customers</span></a>
+                <a href="staff.html" class="nav-item" data-page="staff"><i class="fas fa-user-tie"></i><span class="nav-label">Staff</span></a>
+                <a href="categories.html" class="nav-item" data-page="categories"><i class="fas fa-tags"></i><span class="nav-label">Categories</span></a>
+                <a href="menu.html" class="nav-item active" data-page="menu"><i class="fas fa-hamburger"></i><span class="nav-label">Menu</span></a>
+                <a href="tables.html" class="nav-item" data-page="tables"><i class="fas fa-chair"></i><span class="nav-label">Tables</span></a>
+                <div class="nav-section">Operations</div>
+                <a href="orders.html" class="nav-item" data-page="orders"><i class="fas fa-clipboard-list"></i><span class="nav-label">Orders</span></a>
+                <a href="billing.html" class="nav-item" data-page="billing"><i class="fas fa-file-invoice-dollar"></i><span class="nav-label">Billing</span></a>
+                <a href="payments.html" class="nav-item" data-page="payments"><i class="fas fa-credit-card"></i><span class="nav-label">Payments</span></a>
+                <a href="reservations.html" class="nav-item" data-page="reservations"><i class="fas fa-calendar-check"></i><span class="nav-label">Reservations</span></a>
+                <div class="nav-section">Inventory</div>
+                <a href="inventory.html" class="nav-item" data-page="inventory"><i class="fas fa-boxes"></i><span class="nav-label">Inventory</span></a>
+                <a href="suppliers.html" class="nav-item" data-page="suppliers"><i class="fas fa-truck"></i><span class="nav-label">Suppliers</span></a>
+                <div class="nav-section">Reports</div><a href="reports.html" class="nav-item" data-page="reports"><i class="fas fa-chart-bar"></i><span class="nav-label">Reports</span></a>
+                <div class="nav-section">Settings</div><a href="settings.html" class="nav-item" data-page="settings"><i class="fas fa-cog"></i><span class="nav-label">Settings</span></a>
+                <a href="profile.html" class="nav-item" data-page="profile"><i class="fas fa-user"></i><span class="nav-label">Profile</span></a>
+
+                <div class="nav-section">Info</div>
+                <a href="about.html" class="nav-item" data-page="about"><i class="fas fa-info-circle"></i><span class="nav-label">About</span></a>
+                <a href="contact.html" class="nav-item" data-page="contact"><i class="fas fa-envelope"></i><span class="nav-label">Contact</span></a>
+            </nav>
+            <div class="sidebar-footer"><a href="profile.html" class="user-info"><div class="user-avatar user-initials">AD</div><div class="user-details"><div class="user-name user-name-display">Admin User</div><div class="user-role user-role-display">Manager</div></div></a></div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left"><button class="sidebar-toggle" onclick="RMS.UI.toggleSidebar()"><i class="fas fa-bars"></i></button><button class="sidebar-toggle d-md-none" onclick="RMS.UI.toggleMobileSidebar()"><i class="fas fa-bars"></i></button><div class="breadcrumb"><i class="fas fa-home"></i> / <span id="breadcrumb">Menu</span></div></div>
+                <div class="header-right">
+                    <div class="header-search"><i class="fas fa-search"></i><input type="text" placeholder="Search..." id="globalSearch"></div>
+                    <div class="dropdown"><div class="header-action" id="themeToggle"><i class="fas fa-moon" id="themeToggleIcon"></i></div></div>
+                    <div class="dropdown"><div class="header-action" id="notificationToggle"><i class="fas fa-bell"></i><span class="notification-dot"></span></div><div class="dropdown-menu" id="notificationMenu"><div class="dropdown-header">Notifications</div><div class="notification-item unread"><div class="notif-icon bg-primary-light" style="color:var(--primary)"><i class="fas fa-shopping-cart"></i></div><div class="notif-content"><div class="notif-title">New Order</div><div class="notif-text">A new order has been placed</div><div class="notif-time">2 min ago</div></div></div></div></div>
+                    <div class="dropdown"><div class="header-action" id="userDropdown"><div class="user-avatar-sm user-initials" style="width:36px;height:36px;border-radius:50%;background:var(--primary-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;">AD</div></div><div class="dropdown-menu" id="userDropdownMenu"><div class="dropdown-header">User Menu</div><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a><div class="dropdown-divider"></div><a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></div></div>
+                </div>
+            </header>
+            <div class="page-content">
+                <div class="page-header"><div><h1>Menu Management</h1><p class="page-subtitle">Manage food and beverage items</p></div><div class="page-actions"><button class="btn btn-primary" onclick="Menu.openModal()"><i class="fas fa-plus"></i> Add Item</button><button class="btn btn-outline" onclick="Menu.exportCSV()"><i class="fas fa-download"></i> Export</button></div></div>
+                <div class="search-filter-bar">
+                    <div class="search-box"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Search menu items..." oninput="Menu.search()"></div>
+                    <div class="filter-options">
+                        <select id="filterCategory" onchange="Menu.renderGrid()"><option value="">All Categories</option></select>
+                        <select id="filterAvailability" onchange="Menu.renderGrid()"><option value="">All Items</option><option value="true">Available</option><option value="false">Unavailable</option></select>
+                        <select id="sortBy" onchange="Menu.renderGrid()"><option value="name">Sort by Name</option><option value="price">Sort by Price</option></select>
+                        <select id="sortDir" onchange="Menu.renderGrid()"><option value="asc">Ascending</option><option value="desc">Descending</option></select>
+                    </div>
+                </div>
+                <div class="grid-4" id="menuGrid"></div>
+                <div class="pagination" id="menuPagination"></div>
+            </div>
+        </main>
+    </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const Menu = {
+            currentPage: 1, perPage: 12,
+            init() { this.populateFilter(); this.renderGrid(); },
+            populateFilter() {
+                const cats = RMS.Data.getAll('categories');
+                const sel = document.getElementById('filterCategory');
+                sel.innerHTML = '<option value="">All Categories</option>' + cats.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+            },
+            getData() {
+                let items = RMS.Data.getAll('menuItems');
+                const q = document.getElementById('searchInput')?.value || '';
+                const cat = document.getElementById('filterCategory')?.value || '';
+                const avail = document.getElementById('filterAvailability')?.value || '';
+                if (q) items = RMS.Data.search('menuItems', q, ['name', 'description', 'ingredients']);
+                if (cat) items = items.filter(m => m.category === cat);
+                if (avail !== '') items = items.filter(m => String(m.available) === avail);
+                const sortBy = document.getElementById('sortBy')?.value || 'name';
+                const sortDir = document.getElementById('sortDir')?.value || 'asc';
+                return RMS.Data.sort(items, sortBy, sortDir);
+            },
+            renderGrid() {
+                const all = this.getData();
+                const result = RMS.Data.paginate(all, this.currentPage, this.perPage);
+                const grid = document.getElementById('menuGrid');
+                if (!result.items.length) {
+                    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><i class="fas fa-utensils"></i><h3>No Menu Items</h3><p>Add your first menu item</p></div>`;
+                } else {
+                    grid.innerHTML = result.items.map(m => {
+                        const catName = RMS.Utils.getCategoryName(m.category);
+                        const discounted = m.discount > 0 ? m.price * (1 - m.discount / 100) : m.price;
+                        return `<div class="card" style="position:relative;">
+                            ${m.featured ? '<span style="position:absolute;top:12px;right:12px;background:var(--warning);color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;"><i class="fas fa-star"></i> Featured</span>' : ''}
+                            ${m.discount > 0 ? '<span style="position:absolute;top:12px;left:12px;background:var(--danger);color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">-'+m.discount+'%</span>' : ''}
+                            <div style="width:100%;height:140px;background:var(--light-gray);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--text-light);margin-bottom:12px;overflow:hidden;">
+                                <i class="fas fa-${m.category === 'CAT003' ? 'pizza-slice' : m.category === 'CAT001' ? 'hamburger' : m.category === 'CAT002' ? 'noodles' : m.category === 'CAT004' ? 'drumstick-bite' : m.category === 'CAT005' ? 'rice' : m.category === 'CAT006' ? 'coffee' : m.category === 'CAT007' ? 'ice-cream' : 'utensils'}"></i>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:8px;">
+                                <div><h3 style="font-size:14px;font-weight:600;">${m.name}</h3><span class="badge badge-primary" style="font-size:10px;">${catName}</span></div>
+                                <div style="text-align:right;">
+                                    ${m.discount > 0 ? `<span style="font-size:12px;text-decoration:line-through;color:var(--text-light)">${RMS.Utils.formatCurrency(m.price)}</span><br>` : ''}
+                                    <span style="font-size:18px;font-weight:700;color:var(--primary)">${RMS.Utils.formatCurrency(discounted)}</span>
+                                </div>
+                            </div>
+                            <p style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;">${RMS.Utils.truncate(m.description || '', 60)}</p>
+                            <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
+                                <span class="badge ${m.available ? 'badge-success' : 'badge-secondary'}">${m.available ? 'Available' : 'Unavailable'}</span>
+                                <span class="badge badge-info"><i class="far fa-clock"></i> ${m.prepTime || '-'}</span>
+                            </div>
+                            <div style="display:flex;gap:8px;">
+                                <button class="btn btn-sm btn-outline" style="flex:1;" onclick="Menu.openModal('${m.id}')"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-sm btn-danger" onclick="Menu.deleteItem('${m.id}')"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>`;
+                    }).join('');
+                }
+                this.renderPagination(result);
+            },
+            renderPagination(result) {
+                const c = document.getElementById('menuPagination');
+                if (result.totalPages <= 1) { c.innerHTML = ''; return; }
+                let h = `<button onclick="Menu.changePage(1)" ${!result.hasPrev ? 'disabled' : ''}><i class="fas fa-angle-double-left"></i></button>`;
+                h += `<button onclick="Menu.changePage(${result.page - 1})" ${!result.hasPrev ? 'disabled' : ''}><i class="fas fa-angle-left"></i></button>`;
+                for (let i = 1; i <= result.totalPages; i++) h += `<button class="${i === result.page ? 'active' : ''}" onclick="Menu.changePage(${i})">${i}</button>`;
+                h += `<button onclick="Menu.changePage(${result.page + 1})" ${!result.hasNext ? 'disabled' : ''}><i class="fas fa-angle-right"></i></button>`;
+                h += `<button onclick="Menu.changePage(${result.totalPages})" ${!result.hasNext ? 'disabled' : ''}><i class="fas fa-angle-double-right"></i></button>`;
+                c.innerHTML = h;
+            },
+            changePage(p) { this.currentPage = p; this.renderGrid(); },
+            search() { this.currentPage = 1; this.renderGrid(); },
+            openModal(id = null) {
+                const isEdit = !!id;
+                const m = isEdit ? RMS.Data.getById('menuItems', id) : { name: '', category: '', price: '', discount: 0, description: '', prepTime: '', ingredients: '', available: true, featured: false };
+                const cats = RMS.Data.getAll('categories');
+                const catOpts = cats.map(c => `<option value="${c.id}" ${m.category === c.id ? 'selected' : ''}>${c.name}</option>`).join('');
+                const content = `
+                    <div class="modal-header"><h3><i class="fas ${isEdit ? 'fa-edit' : 'fa-plus'}" style="color:var(--primary)"></i> ${isEdit ? 'Edit Menu Item' : 'Add Menu Item'}</h3><button class="modal-close" onclick="RMS.UI.closeModal()"><i class="fas fa-times"></i></button></div>
+                    <div class="modal-body">
+                        <form id="menuForm" onsubmit="return Menu.save(event)"><input type="hidden" id="menId" value="${id || ''}">
+                            <div class="form-row">
+                                <div class="form-group"><label>Item Name <span class="required">*</span></label><input type="text" class="form-control" id="menName" value="${m.name}" required placeholder="Item name"></div>
+                                <div class="form-group"><label>Category <span class="required">*</span></label><select class="form-control" id="menCategory" required><option value="">Select Category</option>${catOpts}</select></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Price ($) <span class="required">*</span></label><input type="number" class="form-control" id="menPrice" value="${m.price}" required min="0" step="0.01"></div>
+                                <div class="form-group"><label>Discount (%) </label><input type="number" class="form-control" id="menDiscount" value="${m.discount || 0}" min="0" max="100"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Preparation Time </label><input type="text" class="form-control" id="menPrepTime" value="${m.prepTime || ''}" placeholder="e.g. 15 min"></div>
+                                <div class="form-group"><label>Status </label><select class="form-control" id="menAvailable"><option value="true" ${m.available ? 'selected' : ''}>Available</option><option value="false" ${!m.available ? 'selected' : ''}>Unavailable</option></select></div>
+                            </div>
+                            <div class="form-group"><label>Description </label><textarea class="form-control" id="menDesc" rows="2" placeholder="Item description">${m.description || ''}</textarea></div>
+                            <div class="form-group"><label>Ingredients </label><textarea class="form-control" id="menIngredients" rows="2" placeholder="Comma separated">${m.ingredients || ''}</textarea></div>
+                            <div class="form-group"><label><input type="checkbox" id="menFeatured" ${m.featured ? 'checked' : ''}> Mark as Featured Item</label></div>
+                            <div class="modal-footer" style="padding:0;margin-top:24px;border:none;"><button type="button" class="btn btn-outline" onclick="RMS.UI.closeModal()">Cancel</button><button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> ${isEdit ? 'Update' : 'Save'} Item</button></div>
+                        </form>
+                    </div>`;
+                RMS.UI.showModal(content);
+            },
+            save(e) {
+                e.preventDefault();
+                const id = document.getElementById('menId').value;
+                const data = {
+                    name: document.getElementById('menName').value.trim(),
+                    category: document.getElementById('menCategory').value,
+                    price: Number(document.getElementById('menPrice').value),
+                    discount: Number(document.getElementById('menDiscount').value) || 0,
+                    prepTime: document.getElementById('menPrepTime').value.trim(),
+                    available: document.getElementById('menAvailable').value === 'true',
+                    featured: document.getElementById('menFeatured').checked,
+                    description: document.getElementById('menDesc').value.trim(),
+                    ingredients: document.getElementById('menIngredients').value.trim()
+                };
+                if (id) {
+                    const existing = RMS.Data.getById('menuItems', id);
+                    RMS.Data.update('menuItems', id, { ...data, image: existing.image || '' });
+                    RMS.UI.showToast('Menu item updated!', 'success');
+                } else {
+                    data.id = RMS.Data.generateId('menu');
+                    data.image = '';
+                    RMS.Data.add('menuItems', data);
+                    // Update category count
+                    const cat = RMS.Data.getById('categories', data.category);
+                    if (cat) RMS.Data.update('categories', data.category, { itemCount: (cat.itemCount || 0) + 1 });
+                    RMS.UI.showToast('Menu item added!', 'success');
+                }
+                RMS.UI.closeModal();
+                this.renderGrid();
+                return false;
+            },
+            deleteItem(id) {
+                const m = RMS.Data.getById('menuItems', id);
+                RMS.UI.showConfirm('Delete Item', `Delete <strong>${m.name}</strong> from menu?`, () => {
+                    RMS.Data.delete('menuItems', id);
+                    // Update category count
+                    const cat = RMS.Data.getById('categories', m.category);
+                    if (cat && cat.itemCount > 0) RMS.Data.update('categories', m.category, { itemCount: cat.itemCount - 1 });
+                    RMS.UI.showToast('Menu item deleted!', 'success');
+                    this.renderGrid();
+                }, 'danger');
+            },
+            exportCSV() {
+                const data = this.getData();
+                if (!data.length) { RMS.UI.showToast('No data to export', 'warning'); return; }
+                RMS.Utils.exportToCSV(data.map(m => ({ Name: m.name, Category: RMS.Utils.getCategoryName(m.category), Price: m.price, Discount: m.discount + '%', Available: m.available ? 'Yes' : 'No', 'Prep Time': m.prepTime })), 'menu.csv');
+            }
+        };
+        RMS.Page.initMenu = function () { Menu.init(); };
+    </script>
+</body>
+</html>

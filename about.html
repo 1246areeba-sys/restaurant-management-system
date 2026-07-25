@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant - About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="about">
+    <div class="app-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-icon"><i class="fas fa-utensils"></i></div>
+                <span class="brand-text restaurant-name">Gourmet Restaurant</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">Main</div>
+                <a href="dashboard.html" class="nav-item" data-page="dashboard">
+                    <i class="fas fa-th-large"></i>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <div class="nav-section">Management</div>
+                <a href="customers.html" class="nav-item" data-page="customers">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-label">Customers</span>
+                </a>
+                <a href="staff.html" class="nav-item" data-page="staff">
+                    <i class="fas fa-user-tie"></i>
+                    <span class="nav-label">Staff</span>
+                </a>
+                <a href="categories.html" class="nav-item" data-page="categories">
+                    <i class="fas fa-tags"></i>
+                    <span class="nav-label">Categories</span>
+                </a>
+                <a href="menu.html" class="nav-item" data-page="menu">
+                    <i class="fas fa-hamburger"></i>
+                    <span class="nav-label">Menu</span>
+                </a>
+                <a href="tables.html" class="nav-item" data-page="tables">
+                    <i class="fas fa-chair"></i>
+                    <span class="nav-label">Tables</span>
+                </a>
+
+                <div class="nav-section">Operations</div>
+                <a href="orders.html" class="nav-item" data-page="orders">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span class="nav-label">Orders</span>
+                </a>
+                <a href="billing.html" class="nav-item" data-page="billing">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span class="nav-label">Billing</span>
+                </a>
+                <a href="payments.html" class="nav-item" data-page="payments">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="nav-label">Payments</span>
+                </a>
+                <a href="reservations.html" class="nav-item" data-page="reservations">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="nav-label">Reservations</span>
+                </a>
+
+                <div class="nav-section">Inventory</div>
+                <a href="inventory.html" class="nav-item" data-page="inventory">
+                    <i class="fas fa-boxes"></i>
+                    <span class="nav-label">Inventory</span>
+                </a>
+                <a href="suppliers.html" class="nav-item" data-page="suppliers">
+                    <i class="fas fa-truck"></i>
+                    <span class="nav-label">Suppliers</span>
+                </a>
+
+                <div class="nav-section">Reports</div>
+                <a href="reports.html" class="nav-item" data-page="reports">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="nav-label">Reports</span>
+                </a>
+
+                <div class="nav-section">Settings</div>
+                <a href="settings.html" class="nav-item" data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-label">Settings</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-page="profile">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-label">Profile</span>
+                </a>
+
+                <div class="nav-section">Info</div>
+                <a href="about.html" class="nav-item active" data-page="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="nav-label">About</span>
+                </a>
+                <a href="contact.html" class="nav-item" data-page="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span class="nav-label">Contact</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-info">
+                    <div class="user-avatar user-initials">AD</div>
+                    <div class="user-details">
+                        <div class="user-name user-name-display">Admin User</div>
+                        <div class="user-role user-role-display">Manager</div>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle" onclick="RMS.UI.toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button class="sidebar-toggle d-md-none" id="mobileSidebarToggle" onclick="RMS.UI.toggleMobileSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <i class="fas fa-home"></i> / <span id="breadcrumb">About Us</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search anything..." id="globalSearch">
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="themeToggle">
+                            <i class="fas fa-moon" id="themeToggleIcon"></i>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="notificationToggle">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-dot"></span>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-notifications" id="notificationMenu">
+                            <div class="dropdown-header">Notifications</div>
+                            <div class="notification-item unread">
+                                <div class="notif-icon bg-primary-light" style="color:var(--primary)"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">New Order #ORD005</div>
+                                    <div class="notif-text">A new order has been placed</div>
+                                    <div class="notif-time">2 min ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notif-icon bg-success-light" style="color:var(--success)"><i class="fas fa-check-circle"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">Payment Received</div>
+                                    <div class="notif-text">Payment of $52.77 received</div>
+                                    <div class="notif-time">1 hour ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notif-icon bg-warning-light" style="color:var(--warning)"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">Low Stock Alert</div>
+                                    <div class="notif-text">Tomato Sauce running low</div>
+                                    <div class="notif-time">3 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="userDropdown">
+                            <div class="user-avatar-sm user-initials" style="width:36px;height:36px;border-radius:50%;background:var(--primary-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;">AD</div>
+                        </div>
+                        <div class="dropdown-menu" id="userDropdownMenu">
+                            <div class="dropdown-header">User Menu</div>
+                            <a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
+                            <a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Hero Section -->
+                <div class="about-hero" style="background:var(--primary-gradient);border-radius:16px;padding:60px 40px;text-align:center;color:#fff;margin-bottom:30px;">
+                    <h1 style="font-size:2.5rem;font-weight:700;margin-bottom:10px;">About Gourmet Restaurant</h1>
+                    <p style="font-size:1.1rem;opacity:0.9;max-width:700px;margin:0 auto;">A passion for fine dining and exceptional service since 2015</p>
+                </div>
+
+                <!-- Story Section -->
+                <div class="card" style="margin-bottom:30px;">
+                    <div class="card-body" style="padding:40px;">
+                        <div class="grid-2" style="gap:40px;align-items:center;">
+                            <div>
+                                <h2 style="color:var(--primary);margin-bottom:15px;font-size:1.8rem;">Our Story</h2>
+                                <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:15px;">
+                                    Founded in 2015, Gourmet Restaurant began as a small family-owned establishment with a 
+                                    simple vision: to provide an unforgettable dining experience that combines exquisite 
+                                    cuisine with warm, attentive service. What started as a humble 20-seat bistro has 
+                                    grown into one of the city's most beloved fine dining destinations.
+                                </p>
+                                <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:15px;">
+                                    Our team of world-class chefs, led by Executive Chef Marco Rossi, brings together 
+                                    culinary traditions from around the globe, using only the freshest locally-sourced 
+                                    ingredients. Every dish that leaves our kitchen is a work of art, crafted with 
+                                    passion, precision, and a deep respect for the ingredients.
+                                </p>
+                                <p style="color:var(--text-secondary);line-height:1.8;">
+                                    Over the years, we've had the privilege of serving thousands of guests, celebrating 
+                                    countless special occasions, and building a community of food lovers who share our 
+                                    passion for exceptional dining. We look forward to serving you.
+                                </p>
+                            </div>
+                            <div style="background:linear-gradient(135deg,var(--primary-light),var(--bg-secondary));border-radius:12px;padding:60px 40px;text-align:center;">
+                                <i class="fas fa-utensils" style="font-size:4rem;color:var(--primary);margin-bottom:20px;"></i>
+                                <div class="grid-2" style="gap:20px;margin-top:20px;">
+                                    <div>
+                                        <div style="font-size:2rem;font-weight:700;color:var(--primary);">2015</div>
+                                        <div style="color:var(--text-secondary);font-size:0.9rem;">Founded</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem;font-weight:700;color:var(--primary);">50K+</div>
+                                        <div style="color:var(--text-secondary);font-size:0.9rem;">Customers Served</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem;font-weight:700;color:var(--primary);">150+</div>
+                                        <div style="color:var(--text-secondary);font-size:0.9rem;">Menu Items</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem;font-weight:700;color:var(--primary);">98%</div>
+                                        <div style="color:var(--text-secondary);font-size:0.9rem;">Satisfaction Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission Vision Values -->
+                <div class="grid-3" style="margin-bottom:30px;">
+                    <div class="card">
+                        <div class="card-body" style="text-align:center;padding:30px;">
+                            <div style="width:70px;height:70px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                                <i class="fas fa-bullseye" style="font-size:1.8rem;color:var(--primary);"></i>
+                            </div>
+                            <h3 style="margin-bottom:10px;">Our Mission</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">
+                                To create memorable dining experiences by combining exceptional cuisine, 
+                                impeccable service, and a warm, inviting atmosphere that makes every guest 
+                                feel like family.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="text-align:center;padding:30px;">
+                            <div style="width:70px;height:70px;border-radius:50%;background:var(--success-light);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                                <i class="fas fa-eye" style="font-size:1.8rem;color:var(--success);"></i>
+                            </div>
+                            <h3 style="margin-bottom:10px;">Our Vision</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">
+                                To be recognized as the premier fine dining establishment in the region, 
+                                setting the standard for culinary excellence, innovation, and 
+                                exceptional customer service.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="text-align:center;padding:30px;">
+                            <div style="width:70px;height:70px;border-radius:50%;background:var(--warning-light);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                                <i class="fas fa-heart" style="font-size:1.8rem;color:var(--warning);"></i>
+                            </div>
+                            <h3 style="margin-bottom:10px;">Our Values</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">
+                                Quality, integrity, innovation, sustainability, and a genuine passion 
+                                for food and hospitality guide everything we do.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="card" style="margin-bottom:30px;">
+                    <div class="card-header">
+                        <h2><i class="fas fa-users"></i> Our Team</h2>
+                    </div>
+                    <div class="card-body">
+                        <p style="color:var(--text-secondary);margin-bottom:25px;">
+                            Meet the talented individuals who make Gourmet Restaurant special. Our team 
+                            is comprised of passionate culinary professionals dedicated to excellence.
+                        </p>
+                        <div class="grid-4" id="teamGrid">
+                            <!-- Team members will be loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Banner -->
+                <div class="card" style="margin-bottom:30px;background:var(--primary-gradient);color:#fff;">
+                    <div class="card-body" style="padding:50px 30px;">
+                        <div class="grid-4" style="text-align:center;">
+                            <div>
+                                <i class="fas fa-award" style="font-size:2.5rem;margin-bottom:10px;"></i>
+                                <div style="font-size:1.8rem;font-weight:700;">12+</div>
+                                <div style="opacity:0.85;">Awards Won</div>
+                            </div>
+                            <div>
+                                <i class="fas fa-users" style="font-size:2.5rem;margin-bottom:10px;"></i>
+                                <div style="font-size:1.8rem;font-weight:700;">35+</div>
+                                <div style="opacity:0.85;">Team Members</div>
+                            </div>
+                            <div>
+                                <i class="fas fa-smile" style="font-size:2.5rem;margin-bottom:10px;"></i>
+                                <div style="font-size:1.8rem;font-weight:700;">50K+</div>
+                                <div style="opacity:0.85;">Happy Customers</div>
+                            </div>
+                            <div>
+                                <i class="fas fa-calendar-alt" style="font-size:2.5rem;margin-bottom:10px;"></i>
+                                <div style="font-size:1.8rem;font-weight:700;">9+</div>
+                                <div style="opacity:0.85;">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const About = {
+            init() {
+                this.loadTeam();
+            },
+
+            loadTeam() {
+                const staff = RMS.Data.getAll('staff');
+                const teamMembers = [
+                    { name: 'Marco Rossi', role: 'Executive Chef', image: 'fa-user-chef', color: 'var(--primary)' },
+                    { name: 'Sophie Laurent', role: 'Pastry Chef', image: 'fa-cake', color: 'var(--success)' },
+                    { name: 'James Wilson', role: 'Restaurant Manager', image: 'fa-user-tie', color: 'var(--warning)' }
+                ];
+
+                // Add actual staff from data if available
+                if (staff.length > 0) {
+                    const grid = document.getElementById('teamGrid');
+                    let html = '';
+                    
+                    // Show key staff members
+                    staff.slice(0, 4).forEach(s => {
+                        const initials = s.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                        const roleColors = {
+                            'Chef': 'var(--primary)',
+                            'Waiter': 'var(--success)',
+                            'Manager': 'var(--warning)',
+                            'Cashier': 'var(--info)',
+                            'Receptionist': 'var(--danger)'
+                        };
+                        const color = roleColors[s.role] || 'var(--primary)';
+                        
+                        html += `
+                            <div class="card" style="text-align:center;">
+                                <div class="card-body" style="padding:25px;">
+                                    <div style="width:80px;height:80px;border-radius:50%;background:${color}22;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                                        <span style="font-size:1.5rem;font-weight:700;color:${color};">${initials}</span>
+                                    </div>
+                                    <h4 style="margin-bottom:5px;">${s.name}</h4>
+                                    <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:10px;">${s.role}</p>
+                                    <div style="display:flex;justify-content:center;gap:8px;">
+                                        <span class="badge badge-${s.performance >= 4 ? 'success' : s.performance >= 3 ? 'warning' : 'danger'}">${s.performance}/5</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    // Add founder/head team members
+                    html += `
+                        <div class="card" style="text-align:center;">
+                            <div class="card-body" style="padding:25px;">
+                                <div style="width:80px;height:80px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                                    <i class="fas fa-user-chef" style="font-size:2rem;color:var(--primary);"></i>
+                                </div>
+                                <h4 style="margin-bottom:5px;">Maria Santos</h4>
+                                <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:10px;">Founder & CEO</p>
+                                <span class="badge badge-primary">Visionary</span>
+                            </div>
+                        </div>
+                    `;
+
+                    grid.innerHTML = html;
+                } else {
+                    // Fallback static team
+                    const grid = document.getElementById('teamGrid');
+                    grid.innerHTML = teamMembers.map(m => `
+                        <div class="card" style="text-align:center;">
+                            <div class="card-body" style="padding:25px;">
+                                <div style="width:80px;height:80px;border-radius:50%;background:${m.color}22;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                                    <i class="fas ${m.image}" style="font-size:2rem;color:${m.color};"></i>
+                                </div>
+                                <h4 style="margin-bottom:5px;">${m.name}</h4>
+                                <p style="color:var(--text-secondary);font-size:0.9rem;">${m.role}</p>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+        };
+
+        // Override init
+        RMS.Page.initAbout = function () {
+            About.init();
+        };
+    </script>
+</body>
+</html>

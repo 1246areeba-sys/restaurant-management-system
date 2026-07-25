@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant - Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="profile">
+    <div class="app-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand"><div class="logo-icon"><i class="fas fa-utensils"></i></div><span class="brand-text restaurant-name">Gourmet Restaurant</span></div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">Main</div><a href="dashboard.html" class="nav-item" data-page="dashboard"><i class="fas fa-th-large"></i><span class="nav-label">Dashboard</span></a>
+                <div class="nav-section">Management</div><a href="customers.html" class="nav-item" data-page="customers"><i class="fas fa-users"></i><span class="nav-label">Customers</span></a><a href="staff.html" class="nav-item" data-page="staff"><i class="fas fa-user-tie"></i><span class="nav-label">Staff</span></a><a href="categories.html" class="nav-item" data-page="categories"><i class="fas fa-tags"></i><span class="nav-label">Categories</span></a><a href="menu.html" class="nav-item" data-page="menu"><i class="fas fa-hamburger"></i><span class="nav-label">Menu</span></a><a href="tables.html" class="nav-item" data-page="tables"><i class="fas fa-chair"></i><span class="nav-label">Tables</span></a>
+                <div class="nav-section">Operations</div><a href="orders.html" class="nav-item" data-page="orders"><i class="fas fa-clipboard-list"></i><span class="nav-label">Orders</span></a><a href="billing.html" class="nav-item" data-page="billing"><i class="fas fa-file-invoice-dollar"></i><span class="nav-label">Billing</span></a><a href="payments.html" class="nav-item" data-page="payments"><i class="fas fa-credit-card"></i><span class="nav-label">Payments</span></a><a href="reservations.html" class="nav-item" data-page="reservations"><i class="fas fa-calendar-check"></i><span class="nav-label">Reservations</span></a>
+                <div class="nav-section">Inventory</div><a href="inventory.html" class="nav-item" data-page="inventory"><i class="fas fa-boxes"></i><span class="nav-label">Inventory</span></a><a href="suppliers.html" class="nav-item" data-page="suppliers"><i class="fas fa-truck"></i><span class="nav-label">Suppliers</span></a>
+                <div class="nav-section">Reports</div><a href="reports.html" class="nav-item" data-page="reports"><i class="fas fa-chart-bar"></i><span class="nav-label">Reports</span></a>
+                <div class="nav-section">Settings</div><a href="settings.html" class="nav-item" data-page="settings"><i class="fas fa-cog"></i><span class="nav-label">Settings</span></a>
+                <a href="profile.html" class="nav-item active" data-page="profile"><i class="fas fa-user"></i><span class="nav-label">Profile</span></a>
+
+                <div class="nav-section">Info</div>
+                <a href="about.html" class="nav-item" data-page="about"><i class="fas fa-info-circle"></i><span class="nav-label">About</span></a>
+                <a href="contact.html" class="nav-item" data-page="contact"><i class="fas fa-envelope"></i><span class="nav-label">Contact</span></a>
+            </nav>
+            <div class="sidebar-footer"><a href="profile.html" class="user-info"><div class="user-avatar user-initials">AD</div><div class="user-details"><div class="user-name user-name-display">Admin User</div><div class="user-role user-role-display">Manager</div></div></a></div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left"><button class="sidebar-toggle" onclick="RMS.UI.toggleSidebar()"><i class="fas fa-bars"></i></button><button class="sidebar-toggle d-md-none" onclick="RMS.UI.toggleMobileSidebar()"><i class="fas fa-bars"></i></button><div class="breadcrumb"><i class="fas fa-home"></i> / <span id="breadcrumb">Profile</span></div></div>
+                <div class="header-right">
+                    <div class="header-search"><i class="fas fa-search"></i><input type="text" placeholder="Search..." id="globalSearch"></div>
+                    <div class="dropdown"><div class="header-action" id="themeToggle"><i class="fas fa-moon" id="themeToggleIcon"></i></div></div>
+                    <div class="dropdown"><div class="header-action" id="notificationToggle"><i class="fas fa-bell"></i><span class="notification-dot"></span></div><div class="dropdown-menu" id="notificationMenu"><div class="dropdown-header">Notifications</div><div class="notification-item unread"><div class="notif-icon bg-primary-light" style="color:var(--primary)"><i class="fas fa-shopping-cart"></i></div><div class="notif-content"><div class="notif-title">New Order</div><div class="notif-text">A new order has been placed</div><div class="notif-time">2 min ago</div></div></div></div></div>
+                    <div class="dropdown"><div class="header-action" id="userDropdown"><div class="user-avatar-sm user-initials" style="width:36px;height:36px;border-radius:50%;background:var(--primary-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;">AD</div></div><div class="dropdown-menu" id="userDropdownMenu"><div class="dropdown-header">User Menu</div><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a><div class="dropdown-divider"></div><a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></div></div>
+                </div>
+            </header>
+            <div class="page-content">
+                <div class="page-header"><div><h1>User Profile</h1><p class="page-subtitle">Manage your account information</p></div></div>
+
+                <div class="profile-header-card">
+                    <div class="profile-header-content">
+                        <div class="profile-avatar">
+                            <div class="user-initials" style="font-size:36px;">AD</div>
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="user-name-display">Admin User</h2>
+                            <p class="user-role-display">Manager</p>
+                            <p style="opacity:0.8;font-size:13px;margin-top:4px;"><i class="fas fa-envelope"></i> <span id="profileEmail">admin@restaurant.com</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-user-edit" style="color:var(--primary)"></i> Edit Profile</h3></div>
+                    <div class="card-body">
+                        <form id="profileForm" onsubmit="return Profile.save(event)">
+                            <div class="form-row">
+                                <div class="form-group"><label>Full Name <span class="required">*</span></label><input type="text" class="form-control" id="profName" required></div>
+                                <div class="form-group"><label>Email <span class="required">*</span></label><input type="email" class="form-control" id="profEmail" required></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Phone</label><input type="text" class="form-control" id="profPhone"></div>
+                                <div class="form-group"><label>Role</label><select class="form-control" id="profRole"><option value="Manager">Manager</option><option value="Admin">Admin</option><option value="Cashier">Cashier</option><option value="Waiter">Waiter</option></select></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Update Profile</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:24px;">
+                    <div class="card-header"><h3><i class="fas fa-key" style="color:var(--warning)"></i> Change Password</h3></div>
+                    <div class="card-body">
+                        <form id="passwordForm" onsubmit="return Profile.changePassword(event)">
+                            <div class="form-row">
+                                <div class="form-group"><label>Current Password</label><input type="password" class="form-control" id="currentPass" required></div>
+                                <div class="form-group"><label>New Password</label><input type="password" class="form-control" id="newPass" required minlength="6"></div>
+                            </div>
+                            <button type="submit" class="btn btn-warning"><i class="fas fa-key"></i> Change Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const Profile = {
+            init() {
+                this.loadProfile();
+            },
+
+            loadProfile() {
+                const user = RMS.Storage.get('currentUser') || RMS.sampleData.currentUser;
+                document.getElementById('profName').value = user.name || '';
+                document.getElementById('profEmail').value = user.email || '';
+                document.getElementById('profPhone').value = user.phone || '';
+                document.getElementById('profRole').value = user.role || 'Manager';
+                document.getElementById('profileEmail').textContent = user.email || '';
+            },
+
+            save(e) {
+                e.preventDefault();
+                const data = {
+                    name: document.getElementById('profName').value.trim(),
+                    email: document.getElementById('profEmail').value.trim(),
+                    phone: document.getElementById('profPhone').value.trim(),
+                    role: document.getElementById('profRole').value
+                };
+                const user = RMS.Storage.get('currentUser') || RMS.sampleData.currentUser;
+                const updated = { ...user, ...data };
+                RMS.Storage.set('currentUser', updated);
+
+                // Also update in users array
+                const users = RMS.Data.getAll('users');
+                const idx = users.findIndex(u => u.id === user.id);
+                if (idx > -1) {
+                    users[idx] = { ...users[idx], ...data };
+                    RMS.Storage.set('users', users);
+                }
+
+                // Update UI
+                document.querySelectorAll('.user-name-display').forEach(el => el.textContent = data.name);
+                document.querySelectorAll('.user-role-display').forEach(el => el.textContent = data.role);
+                document.querySelectorAll('.user-initials').forEach(el => el.textContent = RMS.Utils.getInitials(data.name));
+                document.getElementById('profileEmail').textContent = data.email;
+
+                RMS.UI.showToast('Profile updated successfully!', 'success');
+                return false;
+            },
+
+            changePassword(e) {
+                e.preventDefault();
+                const current = document.getElementById('currentPass').value;
+                const newPass = document.getElementById('newPass').value;
+                const user = RMS.Storage.get('currentUser') || RMS.sampleData.currentUser;
+
+                const users = RMS.Data.getAll('users');
+                const idx = users.findIndex(u => u.id === user.id);
+                if (idx > -1) {
+                    if (users[idx].password !== current) {
+                        RMS.UI.showToast('Current password is incorrect!', 'error');
+                        return false;
+                    }
+                    users[idx].password = newPass;
+                    RMS.Storage.set('users', users);
+                    RMS.UI.showToast('Password changed successfully!', 'success');
+                    document.getElementById('currentPass').value = '';
+                    document.getElementById('newPass').value = '';
+                }
+                return false;
+            }
+        };
+
+        RMS.Page.initProfile = function () { Profile.init(); };
+    </script>
+</body>
+</html>

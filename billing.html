@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant - Billing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="billing">
+    <div class="app-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand"><div class="logo-icon"><i class="fas fa-utensils"></i></div><span class="brand-text restaurant-name">Gourmet Restaurant</span></div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">Main</div><a href="dashboard.html" class="nav-item" data-page="dashboard"><i class="fas fa-th-large"></i><span class="nav-label">Dashboard</span></a>
+                <div class="nav-section">Management</div><a href="customers.html" class="nav-item" data-page="customers"><i class="fas fa-users"></i><span class="nav-label">Customers</span></a><a href="staff.html" class="nav-item" data-page="staff"><i class="fas fa-user-tie"></i><span class="nav-label">Staff</span></a><a href="categories.html" class="nav-item" data-page="categories"><i class="fas fa-tags"></i><span class="nav-label">Categories</span></a><a href="menu.html" class="nav-item" data-page="menu"><i class="fas fa-hamburger"></i><span class="nav-label">Menu</span></a><a href="tables.html" class="nav-item" data-page="tables"><i class="fas fa-chair"></i><span class="nav-label">Tables</span></a>
+                <div class="nav-section">Operations</div><a href="orders.html" class="nav-item" data-page="orders"><i class="fas fa-clipboard-list"></i><span class="nav-label">Orders</span></a><a href="billing.html" class="nav-item active" data-page="billing"><i class="fas fa-file-invoice-dollar"></i><span class="nav-label">Billing</span></a><a href="payments.html" class="nav-item" data-page="payments"><i class="fas fa-credit-card"></i><span class="nav-label">Payments</span></a><a href="reservations.html" class="nav-item" data-page="reservations"><i class="fas fa-calendar-check"></i><span class="nav-label">Reservations</span></a>
+                <div class="nav-section">Inventory</div><a href="inventory.html" class="nav-item" data-page="inventory"><i class="fas fa-boxes"></i><span class="nav-label">Inventory</span></a><a href="suppliers.html" class="nav-item" data-page="suppliers"><i class="fas fa-truck"></i><span class="nav-label">Suppliers</span></a>
+                <div class="nav-section">Reports</div><a href="reports.html" class="nav-item" data-page="reports"><i class="fas fa-chart-bar"></i><span class="nav-label">Reports</span></a>
+                <div class="nav-section">Settings</div><a href="settings.html" class="nav-item" data-page="settings"><i class="fas fa-cog"></i><span class="nav-label">Settings</span></a>
+                <a href="profile.html" class="nav-item" data-page="profile"><i class="fas fa-user"></i><span class="nav-label">Profile</span></a>
+
+                <div class="nav-section">Info</div>
+                <a href="about.html" class="nav-item" data-page="about"><i class="fas fa-info-circle"></i><span class="nav-label">About</span></a>
+                <a href="contact.html" class="nav-item" data-page="contact"><i class="fas fa-envelope"></i><span class="nav-label">Contact</span></a>
+            </nav>
+            <div class="sidebar-footer"><a href="profile.html" class="user-info"><div class="user-avatar user-initials">AD</div><div class="user-details"><div class="user-name user-name-display">Admin User</div><div class="user-role user-role-display">Manager</div></div></a></div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left"><button class="sidebar-toggle" onclick="RMS.UI.toggleSidebar()"><i class="fas fa-bars"></i></button><button class="sidebar-toggle d-md-none" onclick="RMS.UI.toggleMobileSidebar()"><i class="fas fa-bars"></i></button><div class="breadcrumb"><i class="fas fa-home"></i> / <span id="breadcrumb">Billing</span></div></div>
+                <div class="header-right">
+                    <div class="header-search"><i class="fas fa-search"></i><input type="text" placeholder="Search..." id="globalSearch"></div>
+                    <div class="dropdown"><div class="header-action" id="themeToggle"><i class="fas fa-moon" id="themeToggleIcon"></i></div></div>
+                    <div class="dropdown"><div class="header-action" id="notificationToggle"><i class="fas fa-bell"></i><span class="notification-dot"></span></div><div class="dropdown-menu" id="notificationMenu"><div class="dropdown-header">Notifications</div><div class="notification-item unread"><div class="notif-icon bg-primary-light" style="color:var(--primary)"><i class="fas fa-shopping-cart"></i></div><div class="notif-content"><div class="notif-title">New Order</div><div class="notif-text">A new order has been placed</div><div class="notif-time">2 min ago</div></div></div></div></div>
+                    <div class="dropdown"><div class="header-action" id="userDropdown"><div class="user-avatar-sm user-initials" style="width:36px;height:36px;border-radius:50%;background:var(--primary-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;">AD</div></div><div class="dropdown-menu" id="userDropdownMenu"><div class="dropdown-header">User Menu</div><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a><div class="dropdown-divider"></div><a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></div></div>
+                </div>
+            </header>
+            <div class="page-content">
+                <div class="page-header"><div><h1>Billing Management</h1><p class="page-subtitle">Generate invoices and manage bills</p></div><div class="page-actions"><button class="btn btn-primary" onclick="Billing.openInvoiceModal()"><i class="fas fa-file-invoice"></i> Generate Invoice</button></div></div>
+                <div class="search-filter-bar">
+                    <div class="search-box"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Search by invoice or customer..." oninput="Billing.search()"></div>
+                    <div class="filter-options">
+                        <select id="filterPaid" onchange="Billing.renderTable()"><option value="">All Status</option><option value="paid">Paid</option><option value="pending">Pending</option></select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead><tr><th>Invoice</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+                        <tbody id="billingTableBody"></tbody>
+                    </table>
+                </div>
+                <div class="pagination" id="billingPagination"></div>
+            </div>
+        </main>
+    </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const Billing = {
+            currentPage: 1, perPage: 10,
+            init() { this.renderTable(); },
+            getData() {
+                let items = RMS.Data.getAll('orders');
+                const q = document.getElementById('searchInput')?.value || '';
+                const paid = document.getElementById('filterPaid')?.value || '';
+                if (q) items = RMS.Data.search('orders', q, ['id', 'customer']);
+                if (paid) items = items.filter(o => o.paymentStatus === paid);
+                return RMS.Data.sort(items, 'createdAt', 'desc');
+            },
+            renderTable() {
+                const all = this.getData();
+                const result = RMS.Data.paginate(all, this.currentPage, this.perPage);
+                RMS.UI.populateTable('billingTableBody', result.items, o => `
+                    <tr>
+                        <td><strong>INV-${o.id}</strong></td>
+                        <td>${RMS.Utils.getCustomerName(o.customer)}</td>
+                        <td>${o.items.reduce((s,i) => s + i.quantity, 0)} items</td>
+                        <td><strong>${RMS.Utils.formatCurrency(o.total)}</strong></td>
+                        <td>${RMS.Utils.getStatusBadge(o.paymentStatus)}</td>
+                        <td>${RMS.Utils.formatDateTime(o.createdAt)}</td>
+                        <td>
+                            <div class="table-actions">
+                                <button class="btn-action view" onclick="Billing.viewInvoice('${o.id}')" title="View Invoice"><i class="fas fa-file-invoice"></i></button>
+                                <button class="btn-action edit" onclick="Billing.printInvoice('${o.id}')" title="Print"><i class="fas fa-print"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                `);
+                this.renderPagination(result);
+            },
+            renderPagination(result) {
+                const c = document.getElementById('billingPagination');
+                if (result.totalPages <= 1) { c.innerHTML = ''; return; }
+                let h = `<button onclick="Billing.changePage(1)" ${!result.hasPrev ? 'disabled' : ''}><i class="fas fa-angle-double-left"></i></button>`;
+                h += `<button onclick="Billing.changePage(${result.page - 1})" ${!result.hasPrev ? 'disabled' : ''}><i class="fas fa-angle-left"></i></button>`;
+                for (let i = 1; i <= result.totalPages; i++) h += `<button class="${i === result.page ? 'active' : ''}" onclick="Billing.changePage(${i})">${i}</button>`;
+                h += `<button onclick="Billing.changePage(${result.page + 1})" ${!result.hasNext ? 'disabled' : ''}><i class="fas fa-angle-right"></i></button>`;
+                h += `<button onclick="Billing.changePage(${result.totalPages})" ${!result.hasNext ? 'disabled' : ''}><i class="fas fa-angle-double-right"></i></button>`;
+                c.innerHTML = h;
+            },
+            changePage(p) { this.currentPage = p; this.renderTable(); },
+            search() { this.currentPage = 1; this.renderTable(); },
+            openInvoiceModal() {
+                const orders = RMS.Data.getAll('orders').filter(o => o.paymentStatus !== 'paid');
+                if (!orders.length) { RMS.UI.showToast('No unpaid orders available', 'info'); return; }
+                const opts = orders.map(o => `<option value="${o.id}">${o.id} - ${RMS.Utils.getCustomerName(o.customer)} (${RMS.Utils.formatCurrency(o.total)})</option>`).join('');
+                const content = `
+                    <div class="modal-header"><h3><i class="fas fa-file-invoice-dollar" style="color:var(--primary)"></i> Generate Invoice</h3><button class="modal-close" onclick="RMS.UI.closeModal()"><i class="fas fa-times"></i></button></div>
+                    <div class="modal-body">
+                        <form id="invForm" onsubmit="return Billing.generateInvoice(event)">
+                            <div class="form-group"><label>Select Order <span class="required">*</span></label><select class="form-control" id="invOrder" required><option value="">Select Order</option>${opts}</select></div>
+                            <div class="modal-footer" style="padding:0;margin-top:24px;border:none;"><button type="button" class="btn btn-outline" onclick="RMS.UI.closeModal()">Cancel</button><button type="submit" class="btn btn-primary"><i class="fas fa-file-invoice"></i> Generate Invoice</button></div>
+                        </form>
+                    </div>`;
+                RMS.UI.showModal(content);
+            },
+            generateInvoice(e) {
+                e.preventDefault();
+                const orderId = document.getElementById('invOrder').value;
+                if (!orderId) { RMS.UI.showToast('Please select an order', 'warning'); return; }
+                const o = RMS.Data.getById('orders', orderId);
+                if (!o) { RMS.UI.showToast('Order not found', 'error'); return; }
+                RMS.UI.closeModal();
+                this.viewInvoice(orderId);
+                return false;
+            },
+            viewInvoice(id) {
+                const o = RMS.Data.getById('orders', id);
+                if (!o) return;
+                const settings = RMS.Storage.get('settings') || RMS.sampleData.settings;
+                const itemsHtml = o.items.map(i => `<tr><td style="padding:8px;border-bottom:1px solid #eee;">${i.name}</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:center;">${i.quantity}</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right;">${RMS.Utils.formatCurrency(i.price)}</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right;">${RMS.Utils.formatCurrency(i.price * i.quantity)}</td></tr>`).join('');
+                const content = `
+                    <div class="modal-header"><h3><i class="fas fa-file-invoice" style="color:var(--primary)"></i> Invoice INV-${o.id}</h3><button class="modal-close" onclick="RMS.UI.closeModal()"><i class="fas fa-times"></i></button></div>
+                    <div class="modal-body" id="invoiceContent">
+                        <div style="text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:2px solid #333;">
+                            <h2 style="font-size:24px;font-weight:700;">${settings.restaurantName}</h2>
+                            <p style="font-size:13px;color:var(--text-secondary);">${settings.address || ''} | ${settings.phone || ''}</p>
+                            <h3 style="margin-top:12px;font-size:18px;">INVOICE</h3>
+                            <p style="font-size:13px;"># INV-${o.id}</p>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;margin-bottom:16px;font-size:13px;">
+                            <div><strong>Customer:</strong> ${RMS.Utils.getCustomerName(o.customer)}</div>
+                            <div><strong>Date:</strong> ${RMS.Utils.formatDateTime(o.createdAt)}</div>
+                        </div>
+                        <table style="width:100%;border-collapse:collapse;margin-bottom:16px;">
+                            <thead><tr style="background:var(--bg-primary);"><th style="padding:8px;text-align:left;">Item</th><th style="padding:8px;text-align:center;">Qty</th><th style="padding:8px;text-align:right;">Price</th><th style="padding:8px;text-align:right;">Total</th></tr></thead>
+                            <tbody>${itemsHtml}</tbody>
+                        </table>
+                        <div style="text-align:right;font-size:14px;">
+                            <p>Subtotal: <strong>${RMS.Utils.formatCurrency(o.subtotal)}</strong></p>
+                            ${o.discount > 0 ? `<p>Discount (${o.discount}%): <strong style="color:var(--danger)">-${RMS.Utils.formatCurrency(o.subtotal * o.discount / 100)}</strong></p>` : ''}
+                            <p>Tax: <strong>${RMS.Utils.formatCurrency(o.tax)}</strong></p>
+                            <p>Service Charge: <strong>${RMS.Utils.formatCurrency(o.serviceCharge)}</strong></p>
+                            <hr style="margin:8px 0;"><p style="font-size:22px;font-weight:700;color:var(--primary);">Total: ${RMS.Utils.formatCurrency(o.total)}</p>
+                            <p style="font-size:13px;color:var(--text-secondary);">Payment: ${o.paymentStatus.toUpperCase()}</p>
+                        </div>
+                        <div style="text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid #ddd;font-size:12px;color:var(--text-light);">
+                            Thank you for dining with us!
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline" onclick="RMS.UI.closeModal()">Close</button>
+                        <button class="btn btn-primary" onclick="RMS.Utils.printElement('invoiceContent')"><i class="fas fa-print"></i> Print</button>
+                        <button class="btn btn-success" onclick="Billing.markPaid('${o.id}')"><i class="fas fa-check"></i> Mark as Paid</button>
+                    </div>`;
+                RMS.UI.showModal(content, 'modal-lg');
+            },
+            markPaid(id) {
+                RMS.Data.update('orders', id, { paymentStatus: 'paid' });
+                const o = RMS.Data.getById('orders', id);
+                // Add payment record
+                const payment = { id: RMS.Data.generateId('payment'), orderId: id, amount: o.total, method: 'Cash', status: 'completed', transactionId: 'TXN' + Date.now(), date: RMS.Utils.now() };
+                RMS.Data.add('payments', payment);
+                RMS.UI.showToast('Invoice marked as paid!', 'success');
+                RMS.UI.closeModal();
+                this.renderTable();
+                return false;
+            },
+            printInvoice(id) {
+                const o = RMS.Data.getById('orders', id);
+                if (!o) return;
+                this.viewInvoice(id);
+            }
+        };
+        RMS.Page.initBilling = function () { Billing.init(); };
+    </script>
+</body>
+</html>

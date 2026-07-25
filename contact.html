@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant - Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="contact">
+    <div class="app-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-icon"><i class="fas fa-utensils"></i></div>
+                <span class="brand-text restaurant-name">Gourmet Restaurant</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">Main</div>
+                <a href="dashboard.html" class="nav-item" data-page="dashboard">
+                    <i class="fas fa-th-large"></i>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <div class="nav-section">Management</div>
+                <a href="customers.html" class="nav-item" data-page="customers">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-label">Customers</span>
+                </a>
+                <a href="staff.html" class="nav-item" data-page="staff">
+                    <i class="fas fa-user-tie"></i>
+                    <span class="nav-label">Staff</span>
+                </a>
+                <a href="categories.html" class="nav-item" data-page="categories">
+                    <i class="fas fa-tags"></i>
+                    <span class="nav-label">Categories</span>
+                </a>
+                <a href="menu.html" class="nav-item" data-page="menu">
+                    <i class="fas fa-hamburger"></i>
+                    <span class="nav-label">Menu</span>
+                </a>
+                <a href="tables.html" class="nav-item" data-page="tables">
+                    <i class="fas fa-chair"></i>
+                    <span class="nav-label">Tables</span>
+                </a>
+
+                <div class="nav-section">Operations</div>
+                <a href="orders.html" class="nav-item" data-page="orders">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span class="nav-label">Orders</span>
+                </a>
+                <a href="billing.html" class="nav-item" data-page="billing">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span class="nav-label">Billing</span>
+                </a>
+                <a href="payments.html" class="nav-item" data-page="payments">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="nav-label">Payments</span>
+                </a>
+                <a href="reservations.html" class="nav-item" data-page="reservations">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="nav-label">Reservations</span>
+                </a>
+
+                <div class="nav-section">Inventory</div>
+                <a href="inventory.html" class="nav-item" data-page="inventory">
+                    <i class="fas fa-boxes"></i>
+                    <span class="nav-label">Inventory</span>
+                </a>
+                <a href="suppliers.html" class="nav-item" data-page="suppliers">
+                    <i class="fas fa-truck"></i>
+                    <span class="nav-label">Suppliers</span>
+                </a>
+
+                <div class="nav-section">Reports</div>
+                <a href="reports.html" class="nav-item" data-page="reports">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="nav-label">Reports</span>
+                </a>
+
+                <div class="nav-section">Settings</div>
+                <a href="settings.html" class="nav-item" data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-label">Settings</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-page="profile">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-label">Profile</span>
+                </a>
+
+                <div class="nav-section">Info</div>
+                <a href="about.html" class="nav-item" data-page="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="nav-label">About</span>
+                </a>
+                <a href="contact.html" class="nav-item active" data-page="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span class="nav-label">Contact</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-info">
+                    <div class="user-avatar user-initials">AD</div>
+                    <div class="user-details">
+                        <div class="user-name user-name-display">Admin User</div>
+                        <div class="user-role user-role-display">Manager</div>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle" onclick="RMS.UI.toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button class="sidebar-toggle d-md-none" id="mobileSidebarToggle" onclick="RMS.UI.toggleMobileSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <i class="fas fa-home"></i> / <span id="breadcrumb">Contact Us</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search anything..." id="globalSearch">
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="themeToggle">
+                            <i class="fas fa-moon" id="themeToggleIcon"></i>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="notificationToggle">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-dot"></span>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-notifications" id="notificationMenu">
+                            <div class="dropdown-header">Notifications</div>
+                            <div class="notification-item unread">
+                                <div class="notif-icon bg-primary-light" style="color:var(--primary)"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">New Order #ORD005</div>
+                                    <div class="notif-text">A new order has been placed</div>
+                                    <div class="notif-time">2 min ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notif-icon bg-success-light" style="color:var(--success)"><i class="fas fa-check-circle"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">Payment Received</div>
+                                    <div class="notif-text">Payment of $52.77 received</div>
+                                    <div class="notif-time">1 hour ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notif-icon bg-warning-light" style="color:var(--warning)"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div class="notif-content">
+                                    <div class="notif-title">Low Stock Alert</div>
+                                    <div class="notif-text">Tomato Sauce running low</div>
+                                    <div class="notif-time">3 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="header-action" id="userDropdown">
+                            <div class="user-avatar-sm user-initials" style="width:36px;height:36px;border-radius:50%;background:var(--primary-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;">AD</div>
+                        </div>
+                        <div class="dropdown-menu" id="userDropdownMenu">
+                            <div class="dropdown-header">User Menu</div>
+                            <a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
+                            <a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Hero Section -->
+                <div class="contact-hero" style="background:var(--primary-gradient);border-radius:16px;padding:60px 40px;text-align:center;color:#fff;margin-bottom:30px;">
+                    <h1 style="font-size:2.5rem;font-weight:700;margin-bottom:10px;">Get In Touch</h1>
+                    <p style="font-size:1.1rem;opacity:0.9;max-width:600px;margin:0 auto;">
+                        We'd love to hear from you! Whether you have a question about our menu, 
+                        want to make a reservation, or just want to say hello.
+                    </p>
+                </div>
+
+                <!-- Contact Info Cards -->
+                <div class="grid-4" style="margin-bottom:30px;">
+                    <div class="card">
+                        <div class="card-body" style="text-align:center;padding:25px;">
+                            <div style="width:60px;height:60px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                                <i class="fas fa-map-marker-alt" style="font-size:1.5rem;color:var(--primary);"></i>
+                            </div>
+                            <h4 style="margin-bottom:8px;">Our Location</h4>
+                            <p style="color:var(--text-secondary);font-size:0.9rem;" id="contactAddress">
+                                123 Gourmet Street, Fine Dining District,<br>
+                                New York, NY 10001
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="text-align:center;padding:25px;">
+                            <div style="width:60px;height:60px;border-radius:50%;background:var(--success-light);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                                <i class="fas fa-phone-alt" style="font-size:1.5rem;color:var(--success);"></i>
+                            </div>
+                            <h4 style="margin-bottom:8px;">Phone Number</h4>
+                            <p style="color:var(--text-secondary);font-size:0.9rem;" id="contactPhone">
+                                +1 (555) 123-4567<br>
+                                +1 (555) 987-6543
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="text-align:center;padding:25px;">
+                            <div style="width:60px;height:60px;border-radius:50%;background:var(--warning-light);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                                <i class="fas fa-envelope" style="font-size:1.5rem;color:var(--warning);"></i>
+                            </div>
+                            <h4 style="margin-bottom:8px;">Email Address</h4>
+                            <p style="color:var(--text-secondary);font-size:0.9rem;" id="contactEmail">
+                                info@gourmetrestaurant.com<br>
+                                reservations@gourmetrestaurant.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="text-align:center;padding:25px;">
+                            <div style="width:60px;height:60px;border-radius:50%;background:var(--info-light);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                                <i class="fas fa-clock" style="font-size:1.5rem;color:var(--info);"></i>
+                            </div>
+                            <h4 style="margin-bottom:8px;">Opening Hours</h4>
+                            <p style="color:var(--text-secondary);font-size:0.9rem;" id="contactHours">
+                                Mon - Fri: 11:00 AM - 10:00 PM<br>
+                                Sat - Sun: 10:00 AM - 11:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form + Map -->
+                <div class="grid-2" style="gap:30px;margin-bottom:30px;">
+                    <!-- Contact Form -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="grid-2" style="gap:15px;margin-bottom:15px;">
+                                    <div class="form-group">
+                                        <label class="form-label">Your Name</label>
+                                        <input type="text" class="form-input" id="contactName" placeholder="John Doe" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Your Email</label>
+                                        <input type="email" class="form-input" id="contactEmailInput" placeholder="john@example.com" required>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:15px;">
+                                    <label class="form-label">Subject</label>
+                                    <select class="form-input" id="contactSubject">
+                                        <option value="general">General Inquiry</option>
+                                        <option value="reservation">Reservation</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="complaint">Complaint</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="margin-bottom:20px;">
+                                    <label class="form-label">Message</label>
+                                    <textarea class="form-input" id="contactMessage" rows="5" placeholder="Write your message here..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Map / Location Details -->
+                    <div>
+                        <div class="card" style="margin-bottom:20px;">
+                            <div class="card-header">
+                                <h2><i class="fas fa-map"></i> Find Us</h2>
+                            </div>
+                            <div class="card-body" style="padding:0;">
+                                <div style="background:var(--bg-secondary);border-radius:0 0 12px 12px;height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;text-align:center;">
+                                    <i class="fas fa-map-marked-alt" style="font-size:3rem;color:var(--primary);margin-bottom:15px;"></i>
+                                    <p style="color:var(--text-secondary);max-width:300px;">
+                                        <strong style="color:var(--text-primary);">123 Gourmet Street</strong><br>
+                                        Fine Dining District, New York, NY 10001
+                                    </p>
+                                    <button class="btn btn-outline" style="margin-top:15px;" onclick="window.open('https://maps.google.com/?q=123+Gourmet+Street+New+York+NY+10001', '_blank')">
+                                        <i class="fas fa-external-link-alt"></i> Open in Google Maps
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2><i class="fas fa-share-alt"></i> Follow Us</h2>
+                            </div>
+                            <div class="card-body">
+                                <p style="color:var(--text-secondary);margin-bottom:20px;">
+                                    Stay connected with us on social media for the latest updates, 
+                                    special offers, and behind-the-scenes content.
+                                </p>
+                                <div class="grid-3" style="gap:10px;">
+                                    <a href="#" class="btn btn-outline" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;" onclick="RMS.UI.showToast('Facebook', 'info')">
+                                        <i class="fab fa-facebook-f" style="color:#1877F2;"></i> Facebook
+                                    </a>
+                                    <a href="#" class="btn btn-outline" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;" onclick="RMS.UI.showToast('Instagram', 'info')">
+                                        <i class="fab fa-instagram" style="color:#E4405F;"></i> Instagram
+                                    </a>
+                                    <a href="#" class="btn btn-outline" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;" onclick="RMS.UI.showToast('Twitter', 'info')">
+                                        <i class="fab fa-twitter" style="color:#1DA1F2;"></i> Twitter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="card" style="margin-bottom:30px;">
+                    <div class="card-header">
+                        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="faq-list">
+                            <div class="faq-item" style="border-bottom:1px solid var(--border-color);padding:15px 0;">
+                                <div class="faq-question" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="toggleFAQ(this)">
+                                    <h4 style="margin:0;font-size:1rem;">What are your opening hours?</h4>
+                                    <i class="fas fa-chevron-down" style="color:var(--text-secondary);transition:transform 0.3s;"></i>
+                                </div>
+                                <div class="faq-answer" style="display:none;padding-top:10px;color:var(--text-secondary);">
+                                    We're open Monday to Friday from 11:00 AM to 10:00 PM, and Saturday to Sunday from 10:00 AM to 11:00 PM.
+                                </div>
+                            </div>
+                            <div class="faq-item" style="border-bottom:1px solid var(--border-color);padding:15px 0;">
+                                <div class="faq-question" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="toggleFAQ(this)">
+                                    <h4 style="margin:0;font-size:1rem;">Do you accept reservations?</h4>
+                                    <i class="fas fa-chevron-down" style="color:var(--text-secondary);transition:transform 0.3s;"></i>
+                                </div>
+                                <div class="faq-answer" style="display:none;padding-top:10px;color:var(--text-secondary);">
+                                    Yes! We highly recommend making a reservation, especially on weekends. You can make a reservation through our website or by calling us directly.
+                                </div>
+                            </div>
+                            <div class="faq-item" style="border-bottom:1px solid var(--border-color);padding:15px 0;">
+                                <div class="faq-question" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="toggleFAQ(this)">
+                                    <h4 style="margin:0;font-size:1rem;">Do you offer vegetarian or vegan options?</h4>
+                                    <i class="fas fa-chevron-down" style="color:var(--text-secondary);transition:transform 0.3s;"></i>
+                                </div>
+                                <div class="faq-answer" style="display:none;padding-top:10px;color:var(--text-secondary);">
+                                    Absolutely! Our menu features a wide variety of vegetarian, vegan, and gluten-free options. Please inform your server about any dietary restrictions.
+                                </div>
+                            </div>
+                            <div class="faq-item" style="border-bottom:1px solid var(--border-color);padding:15px 0;">
+                                <div class="faq-question" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="toggleFAQ(this)">
+                                    <h4 style="margin:0;font-size:1rem;">Do you cater for private events?</h4>
+                                    <i class="fas fa-chevron-down" style="color:var(--text-secondary);transition:transform 0.3s;"></i>
+                                </div>
+                                <div class="faq-answer" style="display:none;padding-top:10px;color:var(--text-secondary);">
+                                    Yes! We offer private dining and catering services for special events, corporate gatherings, weddings, and more. Contact our events team for more information.
+                                </div>
+                            </div>
+                            <div class="faq-item" style="padding:15px 0;">
+                                <div class="faq-question" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="toggleFAQ(this)">
+                                    <h4 style="margin:0;font-size:1rem;">What payment methods do you accept?</h4>
+                                    <i class="fas fa-chevron-down" style="color:var(--text-secondary);transition:transform 0.3s;"></i>
+                                </div>
+                                <div class="faq-answer" style="display:none;padding-top:10px;color:var(--text-secondary);">
+                                    We accept all major credit cards (Visa, MasterCard, American Express), debit cards, cash, and digital payment methods including PayPal, Google Pay, and Apple Pay.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.fa-chevron-down');
+            
+            if (answer.style.display === 'none' || !answer.style.display) {
+                answer.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        const Contact = {
+            init() {
+                this.loadContactInfo();
+                this.setupForm();
+            },
+
+            loadContactInfo() {
+                const settings = RMS.Data.getAll('settings');
+                if (settings && settings.length > 0) {
+                    const s = settings[0];
+                    if (s.address) {
+                        document.getElementById('contactAddress').innerHTML = s.address.replace(/\n/g, '<br>');
+                    }
+                    if (s.phone) {
+                        document.getElementById('contactPhone').innerHTML = s.phone.replace(/\n/g, '<br>');
+                    }
+                    if (s.email) {
+                        document.getElementById('contactEmail').innerHTML = s.email.replace(/\n/g, '<br>');
+                    }
+                    if (s.openingHours) {
+                        document.getElementById('contactHours').innerHTML = s.openingHours.replace(/\n/g, '<br>');
+                    }
+                }
+            },
+
+            setupForm() {
+                const form = document.getElementById('contactForm');
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('contactName').value.trim();
+                    const email = document.getElementById('contactEmailInput').value.trim();
+                    const subject = document.getElementById('contactSubject').value;
+                    const message = document.getElementById('contactMessage').value.trim();
+
+                    if (!name || !email || !message) {
+                        RMS.UI.showToast('Please fill in all required fields', 'error');
+                        return;
+                    }
+
+                    // Save contact inquiry to localStorage
+                    const inquiries = RMS.Data.getAll('contactInquiries');
+                    const inquiry = {
+                        id: 'INQ' + String(inquiries.length + 1).padStart(3, '0'),
+                        name: name,
+                        email: email,
+                        subject: subject,
+                        message: message,
+                        createdAt: new Date().toISOString(),
+                        status: 'unread'
+                    };
+                    inquiries.push(inquiry);
+                    RMS.Data.set('contactInquiries', inquiries);
+
+                    // Add activity
+                    const activities = RMS.Data.getAll('activities');
+                    activities.push({
+                        type: 'contact',
+                        text: `New contact inquiry from ${name}`,
+                        time: 'Just now'
+                    });
+                    RMS.Data.set('activities', activities);
+
+                    RMS.UI.showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
+                    form.reset();
+                });
+            }
+        };
+
+        // Override init
+        RMS.Page.initContact = function () {
+            Contact.init();
+        };
+    </script>
+</body>
+</html>
